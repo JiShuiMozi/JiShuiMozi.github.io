@@ -1,0 +1,265 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="google-site-verification" content="" />
+  <meta name="referrer" content="unsafe-url">
+  
+  <title>linux常用命令</title>
+  <meta name="author" content="John Doe">
+  <meta name="description" content="linux常用命令笔记切换目录cd /home 进入 ‘/ home’ 目录’ 
+cd .. 返回上一级目录 
+cd ../.. 返回上两级目录 
+cd 进入个人的主目录 
+cd ~user1 进入个人的主目录 
+cd - 返回上次所在的目录 
+查看目录和文件pwd 显示工作路径 
+ll与ls区别 ">
+  
+  
+  <meta property="og:title" content="linux常用命令"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="Hexo"/>
+  <link href="/apple-touch-icon-precomposed.png" sizes="180x180" rel="apple-touch-icon-precomposed">
+  <link rel="alternate" href="/myblog/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/myblog/css/m.min.css">
+  <link rel="icon" type="image/x-icon" href="/myblog/favicon.ico">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <a id="top"></a>
+  <div id="main">
+    <div class="main-ctnr">
+      <div class="behind">
+  <a href="/myblog/" class="back black-color">
+    <svg class="i-close" viewBox="0 0 32 32" width="22" height="22" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+        <path d="M2 30 L30 2 M30 30 L2 2"></path>
+    </svg>
+  </a>
+  
+</div>
+
+
+  <article class="standard post">
+    <div class="title">
+      
+  
+    <h1 class="page-title center">
+        linux常用命令
+    </h1>
+  
+
+
+    </div>
+    <div class="meta center">
+      <time datetime="2023-02-01T07:12:27.000Z" itemprop="datePublished">
+  <svg class="i-calendar" viewBox="0 0 32 32" width="16" height="16" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M2 6 L2 30 30 30 30 6 Z M2 15 L30 15 M7 3 L7 9 M13 3 L13 9 M19 3 L19 9 M25 3 L25 9"></path>
+  </svg>
+  &nbsp;
+  2023-02-01
+</time>
+
+
+
+
+
+
+    </div>
+    <hr>
+    
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0"><span class="toc-text">linux常用命令笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E7%9B%AE%E5%BD%95"><span class="toc-text">切换目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%9B%AE%E5%BD%95%E5%92%8C%E6%96%87%E4%BB%B6"><span class="toc-text">查看目录和文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95"><span class="toc-text">新建目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95"><span class="toc-text">删除文件或目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E5%92%8C%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95"><span class="toc-text">移动和复制文件或目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vi-vim%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">vi&#x2F;vim的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%9A%B4%E9%9C%B2%E7%AB%AF%E5%8F%A38080"><span class="toc-text">添加暴露端口8080</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E6%96%B0%E5%8A%A0%E8%BD%BD%E6%9A%B4%E9%9C%B2%E7%AB%AF%E5%8F%A3"><span class="toc-text">重新加载暴露端口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%91%BD%E4%BB%A4ls%E6%88%96ll"><span class="toc-text">查看命令ls或ll</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E7%9A%84%E6%9D%83%E9%99%90%E5%91%BD%E4%BB%A4"><span class="toc-text">查看文件的权限命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E7%9A%84%E6%9D%83%E9%99%90%E5%92%8C%E5%88%A0%E9%99%A4%E6%9D%83%E9%99%90"><span class="toc-text">获取文件的权限和删除权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E5%91%BD%E4%BB%A4"><span class="toc-text">查看系统命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%9C%AC%E6%9C%BA%E5%AF%B9%E5%A4%96%E8%AE%BF%E9%97%AEip%EF%BC%9A"><span class="toc-text">查看本机对外访问ip：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%E5%91%BD%E4%BB%A4"><span class="toc-text">查看系统服务命令</span></a></li></ol></li></ol>
+    
+    <div class="picture-container">
+      
+    </div>
+    <h1 id="linux常用命令笔记"><a href="#linux常用命令笔记" class="headerlink" title="linux常用命令笔记"></a>linux常用命令笔记</h1><h2 id="切换目录"><a href="#切换目录" class="headerlink" title="切换目录"></a>切换目录</h2><p>cd /home 进入 ‘/ home’ 目录’ </p>
+<p>cd .. 返回上一级目录 </p>
+<p>cd ../.. 返回上两级目录 </p>
+<p>cd 进入个人的主目录 </p>
+<p>cd ~user1 进入个人的主目录 </p>
+<p>cd - 返回上次所在的目录 </p>
+<h2 id="查看目录和文件"><a href="#查看目录和文件" class="headerlink" title="查看目录和文件"></a>查看目录和文件</h2><p>pwd 显示工作路径 </p>
+<p>ll与ls区别 ll查看文件或目录详情，ls只查看文件或目录</p>
+<p>ls 查看目录中的文件 </p>
+<p>ls -F 查看目录中的文件 </p>
+<p>ls -l 显示文件和目录的详细资料 </p>
+<p>ls -a 显示隐藏文件 </p>
+<p>ls *[0-9]* 显示包含数字的文件名和目录名 </p>
+<h2 id="新建目录"><a href="#新建目录" class="headerlink" title="新建目录"></a>新建目录</h2><p>mkdir dir1 创建一个叫做 ‘dir1’ 的目录’ </p>
+<p>mkdir dir1 dir2 同时创建两个目录 </p>
+<p>mkdir -p /tmp/dir1/dir2 创建一个目录树 </p>
+<h2 id="删除文件或目录"><a href="#删除文件或目录" class="headerlink" title="删除文件或目录"></a>删除文件或目录</h2><p>rm -f file1 删除一个叫做 ‘file1’ 的文件’ </p>
+<p>rmdir dir1 删除一个叫做 ‘dir1’ 的目录’ </p>
+<p>rm -rf dir1 删除一个叫做 ‘dir1’ 的目录并同时删除其内容 </p>
+<p>rm -rf dir1 dir2 同时删除两个目录及它们的内容 </p>
+<h2 id="移动和复制文件或目录"><a href="#移动和复制文件或目录" class="headerlink" title="移动和复制文件或目录"></a>移动和复制文件或目录</h2><p>mv dir1 new_dir 重命名/移动 一个目录 </p>
+<p>cp file1 file2 复制一个文件 </p>
+<p>cp dir/* . 复制一个目录下的所有文件到当前工作目录 </p>
+<p>cp -a /tmp/dir1 . 复制一个目录到当前工作目录 </p>
+<p>cp -a dir1 dir2 复制一个目录 </p>
+<p>cp -rf dir1 dir2/dir3 复制dir1中的文件和目录到dir2/dir3目录下，如果dir3不存在则创建，存在则复制到dir3目录下</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>ln -s file1 lnk1 创建一个指向文件或目录的软链接 </p>
+<p>ln file1 lnk1 创建一个指向文件或目录的物理链接 </p>
+<p>touch -t 0712250000 file1 修改一个文件或目录的时间戳 - (YYMMDDhhmm) </p>
+<p>iconv -l 列出已知的编码 </p>
+<h2 id="vi-vim的使用"><a href="#vi-vim的使用" class="headerlink" title="vi/vim的使用"></a>vi/vim的使用</h2><p>i或I：进入输入模式  i 为『从目前光标所在处输入』， I 为『在目前所在行的第一个非空格符处开始输入』。 (常用)</p>
+<p>o或O：进入输入模式这是英文字母 o 的大小写。o 为『在目前光标所在的下一行处输入新的一行』； O 为在目前光标所在处的上一行输入新的一行！(常用)</p>
+<p>:w :将编辑的数据写入硬盘档案中(常用)</p>
+<p>:w! :若文件属性为『只读』时，强制写入该档案。不过，到底能不能写入， 还是跟你对该档案的档案权限有关啊！</p>
+<p>:q  :离开 vi (常用)</p>
+<p>:q! :若曾修改过档案，又不想储存，使用 ! 为强制离开不储存档案。  注意一下啊，那个惊叹号 (!) 在 vi 当中，常常具有『强制』的意思</p>
+<p>:wq   :储存后离开，若为 :wq! 则为强制储存后离开 (常用)</p>
+<p>ZZ :   这是大写的 Z 喔！若档案没有更动，则不储存离开，若档案已经被更动过，则储存后离开！</p>
+<p>:w [filename] :将编辑的数据储存成另一个档案（类似另存新档）</p>
+<p>:r [filename]  :在编辑的数据中，读入另一个档案的数据。亦即将 『filename』 这个档案内容加到游标所在行后面</p>
+<p>:n1,n2 w [filename] :将 n1 到 n2 的内容储存成 filename 这个档案。</p>
+<p>:! command  :暂时离开 vi 到指令行模式下执行 command 的显示结果！例如『:! ls /home』即可在 vi 当中察看 /home 底下以 ls 输出的档案信息！</p>
+<h2 id="添加暴露端口8080"><a href="#添加暴露端口8080" class="headerlink" title="添加暴露端口8080"></a>添加暴露端口8080</h2><p>firewall-cmd –add-port=8080/tcp –zone=public –permanent</p>
+<h2 id="重新加载暴露端口"><a href="#重新加载暴露端口" class="headerlink" title="重新加载暴露端口"></a>重新加载暴露端口</h2><p>firewall-cmd –reload</p>
+<h2 id="查看命令ls或ll"><a href="#查看命令ls或ll" class="headerlink" title="查看命令ls或ll"></a>查看命令ls或ll</h2><p>ls 或 ll查看目录中的文件 </p>
+<p>ls -F 或 ll-F 查看目录中的文件 </p>
+<p>ls -l 或 ll-l显示文件和目录的详细资料 </p>
+<p>ls -a 或 ll-a 显示隐藏文件 </p>
+<p>ls *[0-9]* 或 ll*[0-9]* 显示包含数字的文件名和目录名 </p>
+<h2 id="查看文件的权限命令"><a href="#查看文件的权限命令" class="headerlink" title="查看文件的权限命令"></a>查看文件的权限命令</h2><p>查看目录中文件的权限操作：ls -l 或者 ll -l</p>
+<p>查看目录中文件的权限操作包括隐藏文件：ls -al 或者 ll-al</p>
+<h2 id="获取文件的权限和删除权限"><a href="#获取文件的权限和删除权限" class="headerlink" title="获取文件的权限和删除权限"></a>获取文件的权限和删除权限</h2><p>语法：chmod [mode] fileName</p>
+<p>r   可读      ——   数字代号  4</p>
+<p>w  可写      ——   数字代号  2</p>
+<p>x  可执行    ——   数字代号  1</p>
+<p>_   没有任何执行权限  —— 数字代号 0</p>
+<p>可自由组合 例如可读+可写权限：4+2=6</p>
+<p>可读可写     ——     数字代号 6</p>
+<p>u：User，即文件或目录的拥有者。</p>
+<p>g：Group，即文件或目录的所属群组。</p>
+<p>o：Other，除了文件或目录拥有者或所属群组之外，其他用户皆属于这个范围。</p>
+<p>a：All，即全部的用户，包含拥有者，所属群组以及其他用户。</p>
+<p>指令实例： </p>
+<p>所有用户获取text文件可执行权限</p>
+<p>chmod a+x test.txt</p>
+<p>所有用户删除test文件可执行权限</p>
+<p>chmod a-x test.txt</p>
+<h2 id="查看系统命令"><a href="#查看系统命令" class="headerlink" title="查看系统命令"></a>查看系统命令</h2><p>arch 显示机器的处理器架构(1) </p>
+<p>uname -m 显示机器的处理器架构(2) </p>
+<p>uname -r 显示正在使用的内核版本 </p>
+<p>dmidecode -q 显示硬件系统部件 - (SMBIOS / DMI) </p>
+<p>hdparm -i /dev/hda 罗列一个磁盘的架构特性 </p>
+<p>hdparm -tT /dev/sda 在磁盘上执行测试性读取操作 </p>
+<p>cat /proc/cpuinfo 显示CPU info的信息</p>
+<p>cat /proc/interrupts 显示中断 </p>
+<p>cat /proc/meminfo 校验内存使用 </p>
+<p>cat /proc/swaps 显示哪些swap被使用</p>
+<p>cat /proc/version 显示内核的版本 </p>
+<p>cat /proc/net/dev 显示网络适配器及统计 </p>
+<p>cat /proc/mounts 显示已加载的文件系统 </p>
+<p>lspci -tv 罗列 PCI 设备 </p>
+<p>lsusb -tv 显示 USB 设备 </p>
+<p>date 显示系统日期 </p>
+<p>cal 2007 显示2007年的日历表 </p>
+<p>date 041217002007.00 设置日期和时间 - 月日时分年.秒 </p>
+<p>clock -w 将时间修改保存到 BIOS </p>
+<h2 id="查看本机对外访问ip："><a href="#查看本机对外访问ip：" class="headerlink" title="查看本机对外访问ip："></a>查看本机对外访问ip：</h2><p>curl <a target="_blank" rel="noopener" href="http://myip.ipip.net/">http://myip.ipip.net</a></p>
+<h2 id="查看系统服务命令"><a href="#查看系统服务命令" class="headerlink" title="查看系统服务命令"></a>查看系统服务命令</h2><p>ps -ef 查看服务列表</p>
+<p>ps -ef | grep ‘服务名称’ 查看单个服务</p>
+
+
+  </article>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <div class="busuanzi center">
+    page PV:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;・&nbsp;
+    site PV:&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;・&nbsp;
+    site UV:&nbsp;<span id="busuanzi_value_site_uv"></span>
+  </div>
+
+
+    
+
+
+
+
+
+    </div>
+  </div>
+  <footer class="page-footer"><div class="clearfix">
+</div>
+<div class="right-foot">
+    <div class="firstrow">
+        <a href="#top" target="_self">
+        <svg class="i-caret-right" viewBox="0 0 32 32" width="24" height="24" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M10 30 L26 16 10 2 Z"></path>
+        </svg>
+        </a>
+        © XXX 2016-2020
+    </div>
+    <div class="secondrow">
+        <a target="_blank" rel="noopener" href="https://github.com/gaoryrt/hexo-theme-pln">
+        Theme Pln
+        </a>
+    </div>
+</div>
+<div class="clearfix">
+</div>
+</footer>
+  <script type="text/javascript">
+
+// disqus scripts
+
+
+// dropdown scripts
+function $(s) {
+    return document.querySelector(s)
+  }
+
+  function $$(s) {
+    return document.querySelectorAll(s)
+  }
+  var dropDownElArr = $$('.dropdown')
+  for (var i = 0; i < dropDownElArr.length; i += 1) {
+    dropDownElArr[i].addEventListener('click', function(event) {
+      var content = this.querySelector('.dropdown-content')
+      event.stopPropagation()
+      if (content.className.indexOf('open') < 0) {
+        content.classList.add('open')
+      } else {
+        content.classList.remove('open')
+      }
+    })
+  }
+  document.body.addEventListener('click', function() {
+    var dropDownContentElArr = $$('.dropdown-content')
+    for (var i = 0; i < dropDownContentElArr.length; i += 1) {
+      dropDownContentElArr[i].classList.remove('open')
+    }
+  })
+
+  // smooth scroll
+  $$('a[href^="#"]').forEach(e=>{
+    e.addEventListener("click", function(e) {
+      e.preventDefault();
+      var t = this.getAttribute("href").substr(1);
+      $(`[id='${decodeURIComponent(t)}']`).scrollIntoView({
+        behavior: "smooth"
+      }),
+      t === "top" ? history.replaceState(null, null, " ") : history.pushState(null, null, `#${t}`)
+    })
+  })
+
+// search
+var searchEl = document.querySelector("#local-search-input")
+if (searchEl) searchEl.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') {
+    var s = e.target.value
+    window.open('//www.google.com/search?q=site:https://gitee.com/zhouxxGit/myblog.git%20' + s, '_blank').focus()
+  }
+})
+
+</script>
+
+</body>
+</html>
